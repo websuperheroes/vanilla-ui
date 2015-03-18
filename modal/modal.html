@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vanilla UI - Modal</title>
+
+    <!-- Eric Meyer reset - not needed for modal to work -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <!-- Minimal styles for modal - required -->
+    <link rel="stylesheet" href="css/vanilla-ui.modal.css">
+</head>
+<body>
+
+    <a href="#" ui-modal-btn="1">Launch m1</a><br>
+    <a href="#" ui-modal-btn="2">Launch m2</a>
+
+    <div ui-modal="1" class="modal_container">
+        <p>I am a super secret modal of glory</p>
+        <button ui-modal-close>Close</button>
+    </div>
+
+    <div ui-modal="2" class="modal_container">
+        <p>By the beard of Troglor!</p>
+        <button ui-modal-close>Close</button>
+    </div>
+
+
+    <div ui-modal-bg class="modal_backdrop"></div>
+    <script src="js/vanilla-ui.modal.js"></script>
+</body>
+</html>
