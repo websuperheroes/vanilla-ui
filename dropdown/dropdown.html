@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vanilla UI - Dropdowns</title>
+
+    <!-- Eric Meyer reset - not needed for dropdownse to work -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <!-- Minimal styles for dropdowns - required -->
+    <link rel="stylesheet" href="css/vanilla-ui.dropdown.css">
+</head>
+<body>
+
+    <div class="panel">
+
+        <div class="dropdown-wrapper">
+            <a ui-dropdown-trigger="1" href="#">I  dropdown!</a>
+
+            <div ui-dropdown="1" class="dropdown">
+                <p>I am the glory!</p>
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="dropdown-wrapper">
+            <button ui-dropdown-trigger="2" class="btn has-dropdown">I dropdown too</button>
+            <div ui-dropdown="2" class="dropdown">
+                <p>I guess I'm ok</p>
+            </div>
+        </div>
+        <!-- .dropdown-wrapper -->
+
+    </div>
+
+
+
+    <script src="js/vanilla-ui.dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body {
+    padding: 20px;
+}
+
+/* Hollow Button */
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #777;
+    border-radius: 3px;
+    background: none;
+    position: relative;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+/* Down Arrow Icon */
+
+.has-dropdown {
+    padding-right: 22px;
+}
+
+.has-dropdown:after {
+    content: '';
+    border: 5px solid rgba(0,0,0,0);
+    border-top: 7px solid #777;
+    height: 0;
+    width: 0;
+    top: 50%;
+    position: absolute;
+    margin-top: -2px;
+    right: 6px;
+}
+
+
+/* Base dropdown styles */
+
+.dropdown-wrapper {
+    position: relative;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    padding: 10px;
+    background: #FFF;
+    z-index: 1;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+
+.dropdown--is-open {
+    display: block;
+}
