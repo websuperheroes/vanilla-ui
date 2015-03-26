@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vanilla UI - Tabs</title>
+
+    <!-- Eric Meyer reset - not needed for tabs to work -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <!-- Minimal styles for tabs - required -->
+    <link rel="stylesheet" href="css/vanilla-ui.tabs.css">
+</head>
+<body>
+
+    <nav class="tab-nav">
+        <a ui-tab-nav="1" class="tab-nav__item tab-nav__item--current" href="#">Tab 1</a>
+        <a ui-tab-nav="2" class="tab-nav__item" href="#">Tab 2</a>
+        <a ui-tab-nav="3" class="tab-nav__item" href="#">Tab 3</a>
+    </nav>
+
+
+    <section class="tabs">
+        <div ui-tab="1" class="tab tab--current">
+            <p>Oh my gosh, look at me, I'm Tab 1</p>
+        </div>
+        <div ui-tab="2" class="tab">
+            <p>Everyone knows the realness is going down in Tab 2</p>
+        </div>
+        <div ui-tab="3" class="tab">
+            <p>How about some love for tab 3 y'all</p>
+        </div>
+    </section>
+
+    <script src="js/vanilla-ui.tabs.js"></script>
+</body>
+</html>

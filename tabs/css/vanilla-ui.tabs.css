@@ -1,0 +1,45 @@
+body {
+    padding: 20px;
+}
+
+/* Tab Button - Link */
+
+.tab-nav__item {
+    display: inline-block;
+    border: 1px solid #CCC;
+    border-bottom: none;
+    padding: 8px 10px;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    z-index: 2;
+    background: #F1F1F1;
+    text-decoration: none;
+    color: #333;
+}
+
+
+/* Tab Content Area */
+
+.tabs {
+    border-top: 1px solid #CCC;
+    position: relative;
+    top: -1px;
+    z-index: 1;
+}
+
+.tab {
+    display: none;
+    padding: 10px;
+}
+
+/* Current - Active State */
+
+.tab--current {
+    display: block;
+}
+.tab-nav__item--current {
+    border-bottom: 1px solid #FFF;
+    font-weight: bold;
+    background: #FFF;
+    cursor: default;
+}
