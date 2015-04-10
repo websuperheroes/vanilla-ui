@@ -6,10 +6,10 @@
 
     var wshVanillaDropdown = function(){
 
-        var self = this,
-                settings = {
-                    activeDropdown : null,
-                };
+        var self = this;
+        var settings = {
+            activeDropdown : null,
+        };
 
         var domElements = {
             dropdownTrigger      : document.querySelectorAll('[ui-dropdown-trigger]'),
@@ -24,7 +24,7 @@
         this.bindEvents = function() {
             document.body.onmouseup = function (event) {
                 var target = event.target || event.toElement;
-                if (target.hasAttribute("ui-dropdown-trigger")){
+                if (target.hasAttribute("ui-dropdown-trigger") && target.className.indexOf('--current') === -1) {
                     self.showDropdown();
                 } else {
                     self.hideDropdowns();
@@ -34,16 +34,16 @@
 
         this.showDropdown = function() {
 
-             var targetDropdownId = event.target.attributes['ui-dropdown-trigger'].value;
-             var targetDropdownTrigger = document.querySelectorAll('[ui-dropdown-trigger="' + targetDropdownId + '"]')[0]
-             var targetDropdown = document.querySelectorAll('[ui-dropdown="' + targetDropdownId + '"]')[0];
+            var targetDropdownId = event.target.attributes['ui-dropdown-trigger'].value;
+            var targetDropdownTrigger = document.querySelectorAll('[ui-dropdown-trigger="' + targetDropdownId + '"]')[0]
+            var targetDropdown = document.querySelectorAll('[ui-dropdown="' + targetDropdownId + '"]')[0];
 
-             this.hideDropdowns();
+            self.hideDropdowns();
 
-             settings.activeDropdown = targetDropdown;
+            settings.activeDropdown = targetDropdown;
 
-             targetDropdownTrigger.className += " dropdown-trigger--current";
-             targetDropdown.className += " dropdown--is-open";
+            targetDropdownTrigger.className += " dropdown-trigger--current";
+            targetDropdown.className += " dropdown--is-open";
 
         };
 
@@ -58,6 +58,6 @@
     };
 
     var dropdown = new wshVanillaDropdown();
-    dropdown.init();
+        dropdown.init();
 
 })();
