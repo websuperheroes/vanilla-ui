@@ -1,3 +1,5 @@
+'use strict';
+
 (function(){
 
     /**
@@ -17,30 +19,28 @@
         };
 
         this.init = function(){
-            // Other logic here
-            console.log('What!');
             this.bindEvents();
         };
 
         this.bindEvents = function() {
             document.body.onmouseup = function (event) {
                 var target = event.target || event.toElement;
-                if (target.hasAttribute("ui-tab-nav")){ self.showTab() };
+                if (target.hasAttribute('ui-tab-nav')){ self.showTab(); }
             };
         };
 
         this.showTab = function() {
 
              var targetTabId = event.target.attributes['ui-tab-nav'].value;
-             var targetTabNav = document.querySelectorAll('[ui-tab-nav="' + targetTabId + '"]')[0]
+             var targetTabNav = document.querySelectorAll('[ui-tab-nav="' + targetTabId + '"]')[0];
              var targetTab = document.querySelectorAll('[ui-tab="' + targetTabId + '"]')[0];
 
              this.hideTabs();
 
              settings.activeTab = targetTab;
 
-             targetTabNav.className += " tab-nav__item--current";
-             targetTab.className += " tab--current";
+             targetTabNav.className += ' tab-nav__item--current';
+             targetTab.className += ' tab--current';
 
         };
 
@@ -50,7 +50,7 @@
                 domElements.tab[i].className = domElements.tab[i].className.replace( /(?:^|\s)tab--current(?!\S)/g , '' );
 
                 domElements.tabNav[i].className = domElements.tabNav[i].className.replace( /(?:^|\s)tab-nav__item--current(?!\S)/g , '' );
-            };
+            }
         };
     };
 
