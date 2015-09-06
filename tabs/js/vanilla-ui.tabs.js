@@ -28,41 +28,59 @@
         this.bindEvents = function() {
             
             document.body.onmouseup = function (event) {
-                self.checkTarget(event);
+                var target = event.target || event.toElement;
+                
+	            if (target.parentNode.classList.contains(settings.tabsHook)){ 
+	            	self.prepareTab(target);
+	            } else {
+	            	return;
+	            }       
             };
 
             document.body.onkeydown = function(event){
-            	if(event.keyCode == ENTER_KEY || event.which == ENTER_KEY) {
-            		self.checkTarget(event);
-            	}
-            	if(event.keyCode == LEFT_ARROW_KEY || event.which == LEFT_ARROW_KEY) {
-            		console.log('lefty!');
-            	}
-            	if(event.keyCode == RIGHT_ARROW_KEY || event.which == RIGHT_ARROW_KEY) {
-            		console.log('righty!');
-            	}
+            	
+            	var target = event.target || event.toElement;
+                
+	            if (target.parentNode.classList.contains(settings.tabsHook)){ 
+	            	
+	            	if(event.keyCode == ENTER_KEY || event.which == ENTER_KEY) {
+
+	            	}
+	            	else if(event.keyCode == LEFT_ARROW_KEY || event.which == LEFT_ARROW_KEY) {
+
+	            		var xTarget = target.previousElementSibling;
+	            		
+	            		if(!xTarget) {
+	            			xTarget = target.parentNode.lastElementChild;
+	            		}
+	            		target = xTarget;
+	            	}
+	            	
+	            	else if(event.keyCode == RIGHT_ARROW_KEY || event.which == RIGHT_ARROW_KEY) {
+
+	            		var yTarget = target.nextElementSibling;
+	            		if(!yTarget) {
+	            			yTarget = target.parentNode.firstElementChild;
+	            		}
+	            		target = yTarget;
+	            	}
+	            	else {
+	            		return;
+	            	}
+	            	
+	            	self.prepareTab(target);
+	            } // end if
             };
         };
 
-        this.checkTarget = function(event) {
-        	var target = event.target || event.toElement;
-                
-            if (target.parentNode.classList.contains(settings.tabsHook)){ 
-            	self.prepareTab();
-            } else {
-            	return;
-            }
-        };
-
-        this.prepareTab = function() {
-
-             var url   			= event.target.href;
+        this.prepareTab = function(pTarget) {
+             var url   			= pTarget.href;
              var targetTabNavId = url.substring(url.indexOf('#') + 1);
              var targetTabPane  = document.getElementById(targetTabNavId);
 
              this.hideTab();
 
-             settings.activeTabNav  = event.target;
+             settings.activeTabNav  = pTarget;
              settings.activeTabPane = targetTabPane;
 
              this.showTab();       
@@ -74,7 +92,12 @@
 
             settings.activeTabNav.setAttribute('aria-selected', 'true');
 			settings.activeTabPane.setAttribute('aria-hidden', 'false');
-			settings.activeTabNav.focus();
+			
+			// dirty time out, to refactor
+			window.setTimeout(function () { 
+			    settings.activeTabNav.focus();
+			}, 0); 
+
         };
 
         this.hideTab = function(){
