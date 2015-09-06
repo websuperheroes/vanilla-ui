@@ -11,68 +11,27 @@
 </head>
 <body>
 
-	<nav id="" role="navigation"> 
-		<ul class="nav-menu">
-			<li class="nav-menu__item">
-				<a href="somepage.html" id="link-1" aria-haspopup="true" aria-owns="sub-nav-1" aria-controls="sub-nav-1" aria-expanded="false" class="">About</a>
-				
-				<div class="sub-nav" id="sub-nav-1" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="link-1">
-					<ul>
-						<li class="sub-nav-menu__item">
-							<a href="somepage.html" class="">Accessibility</a>
-						</li>
-						<li class="sub-nav-menu__item">
-							<a href="somepage.html" class="">Admissions</a>
-						</li>
-						<li class="sub-nav-menu__item">
-							<a href="somepage.html" class="">Diversity</a>
-						</li>
-					</ul>
-				</div>
-
-			</li>
-			<li class="nav-menu__item">
-				<a href="somepage.html" id="link-2" aria-haspopup="true" aria-owns="sub-nav-2" aria-controls="sub-nav-2" aria-expanded="false" class="">Academics</a>								
-				<div class="sub-nav" id="sub-nav-2" role="group" aria-expanded="true" aria-hidden="false" aria-labelledby="link-2">
-					<ul>
-						<li class="sub-nav-menu__item">
-							<a href="somepage.html">Degree Programs</a>
-						</li>
-						<li class="sub-nav-menu__item">
-							<a href="somepage.html">Faculty</a>
-						</li>
-						<li class="sub-nav-menu__item">
-							<a href="somepage.html">Distance Learning</a>
-						</li>
-						<li class="sub-nav-menu__item">
-							<a href="somepage.html">Libraries</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-		</ul>
-	</nav>
-
 	<div class="panel">
 
-		<div class="js-dropdown-wrapper dropdown-wrapper">
-
-			<a href="#" id="" class="js-dropdown-trigger">I  dropdown!</a>
-
-			<div id="dropdown-1" class="js-dropdown dropdown">
-				<p>I am the glory!</p>
-			</div>
-
-		</div>
-
-		<br>
-		<br>
 		<div class="dropdown-wrapper">
 
-			<button class="js-dropdown-trigger btn has-dropdown">I dropdown too</button>
+			<button id="dropdown-3" class="js-dropdown-trigger btn has-dropdown" role="button" aria-haspopup="true" aria-owns="dropdown-1" aria-controls="sdropdown-1" aria-expanded="false">Menu</button>
 
-			<div id="dropdown-1" class="js-dropdown dropdown">
-				<p>I guess I'm ok</p>
+			<div id="dropdown-1" class="js-dropdown dropdown" role="menu" aria-labelledby="dropdown-3">
+				<ul class="menu">
+					<li role="menuitem" class="menu__item">
+						<a href="link1.html">Home</a>
+					</li>
+					<li role="menuitem" class="menu__item">
+						<a href="link2.html">About</a>
+					</li>
+					<li role="menuitem" class="menu__item">
+						<a href="link3.html">Store</a>
+					</li>
+					<li role="menuitem" class="menu__item">
+						<a href="link4.html">Contact</a>
+					</li>
+				</ul>
 			</div>
 
 		</div>
