@@ -1,43 +1,85 @@
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Vanilla UI - Dropdowns</title>
+	<meta charset="UTF-8">
+	<title>Vanilla UI - Dropdowns</title>
 
-    <!-- Eric Meyer reset - not needed for dropdownse to work -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<!-- Eric Meyer reset - not needed for dropdownse to work -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
 
-    <!-- Minimal styles for dropdowns - required -->
-    <link rel="stylesheet" href="css/vanilla-ui.dropdown.css">
+	<!-- Minimal styles for dropdowns - required -->
+	<link rel="stylesheet" href="css/vanilla-ui.dropdown.css">
 </head>
 <body>
 
-    <div class="panel">
+	<nav id="" role="navigation"> 
+		<ul class="nav-menu">
+			<li class="nav-menu__item">
+				<a href="somepage.html" id="link-1" aria-haspopup="true" aria-owns="sub-nav-1" aria-controls="sub-nav-1" aria-expanded="false" class="">About</a>
+				
+				<div class="sub-nav" id="sub-nav-1" role="group" aria-expanded="false" aria-hidden="true" aria-labelledby="link-1">
+					<ul>
+						<li class="sub-nav-menu__item">
+							<a href="somepage.html" class="">Accessibility</a>
+						</li>
+						<li class="sub-nav-menu__item">
+							<a href="somepage.html" class="">Admissions</a>
+						</li>
+						<li class="sub-nav-menu__item">
+							<a href="somepage.html" class="">Diversity</a>
+						</li>
+					</ul>
+				</div>
 
-        <div class="dropdown-wrapper">
-            <a ui-dropdown-trigger="1" href="#">I  dropdown!</a>
+			</li>
+			<li class="nav-menu__item">
+				<a href="somepage.html" id="link-2" aria-haspopup="true" aria-owns="sub-nav-2" aria-controls="sub-nav-2" aria-expanded="false" class="">Academics</a>								
+				<div class="sub-nav" id="sub-nav-2" role="group" aria-expanded="true" aria-hidden="false" aria-labelledby="link-2">
+					<ul>
+						<li class="sub-nav-menu__item">
+							<a href="somepage.html">Degree Programs</a>
+						</li>
+						<li class="sub-nav-menu__item">
+							<a href="somepage.html">Faculty</a>
+						</li>
+						<li class="sub-nav-menu__item">
+							<a href="somepage.html">Distance Learning</a>
+						</li>
+						<li class="sub-nav-menu__item">
+							<a href="somepage.html">Libraries</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</nav>
 
-            <div ui-dropdown="1" class="dropdown">
-                <p>I am the glory!</p>
-            </div>
+	<div class="panel">
 
-        </div>
+		<div class="js-dropdown-wrapper dropdown-wrapper">
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="dropdown-wrapper">
-            <button ui-dropdown-trigger="2" class="btn has-dropdown">I dropdown too</button>
-            <div ui-dropdown="2" class="dropdown">
-                <p>I guess I'm ok</p>
-            </div>
-        </div>
-        <!-- .dropdown-wrapper -->
+			<a href="#" id="" class="js-dropdown-trigger">I  dropdown!</a>
 
-    </div>
+			<div id="dropdown-1" class="js-dropdown dropdown">
+				<p>I am the glory!</p>
+			</div>
 
+		</div>
 
+		<br>
+		<br>
+		<div class="dropdown-wrapper">
 
-    <script src="js/vanilla-ui.dropdown.js"></script>
+			<button class="js-dropdown-trigger btn has-dropdown">I dropdown too</button>
+
+			<div id="dropdown-1" class="js-dropdown dropdown">
+				<p>I guess I'm ok</p>
+			</div>
+
+		</div>
+		<!-- .dropdown-wrapper -->
+
+	</div>
+
+	<script src="js/vanilla-ui.dropdown.js"></script>
 </body>
 </html>

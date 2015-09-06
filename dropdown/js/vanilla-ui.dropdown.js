@@ -4,56 +4,60 @@
     * wshVanillaDropdowns Module
     */
 
-    var wshVanillaDropdown = function(){
+    var wshVanillaDropdown = function(pTriggerHook, pDropdownHook, pActiveTriggerClassName, pActiveDropdownClassName){
 
         var self = this;
         var settings = {
             activeDropdown : null,
-        };
-
-        var domElements = {
-            dropdownTrigger      : document.querySelectorAll('[ui-dropdown-trigger]'),
-            dropdown             : document.querySelectorAll('[ui-dropdown]')
+            activeDropdownTrigger: null,
+            triggerHook: pTriggerHook   || 'js-dropdown-trigger',
+            dropdownHook: pDropdownHook || 'js-dropdown', 
+            activeTriggerClassName: pActiveTriggerClassName || 'dropdown-trigger--current',
+            activeDropdownClassName: pActiveDropdownClassName || 'dropdown--is-open',
         };
 
         this.init = function(){
-            // Other logic here
             this.bindEvents();
         };
 
         this.bindEvents = function() {
             document.body.onmouseup = function (event) {
+                
                 var target = event.target || event.toElement;
-                if (target.hasAttribute("ui-dropdown-trigger") && target.className.indexOf('--current') === -1) {
-                    self.showDropdown();
+                
+                if (target.classList.contains(settings.triggerHook) && target.className.indexOf('--current') === -1 ) {
+                    self.showDropdown(target);
+                } else if (target.classList.contains(settings.dropdownHook) || target.parentNode.classList.contains(settings.dropdownHook)){
+                    return;
                 } else {
                     self.hideDropdowns();
-                };
+                }
+
             };
         };
 
-        this.showDropdown = function() {
+        this.showDropdown = function(pTarget) {
 
-            var targetDropdownId = event.target.attributes['ui-dropdown-trigger'].value;
-            var targetDropdownTrigger = document.querySelectorAll('[ui-dropdown-trigger="' + targetDropdownId + '"]')[0]
-            var targetDropdown = document.querySelectorAll('[ui-dropdown="' + targetDropdownId + '"]')[0];
+            var targetDropdownTrigger = pTarget;
+            var targetDropdown = pTarget.nextElementSibling;
 
             self.hideDropdowns();
 
-            settings.activeDropdown = targetDropdown;
+            settings.activeDropdown 	   = targetDropdown;
+            settings.activeDropdownTrigger = targetDropdownTrigger;
 
-            targetDropdownTrigger.className += " dropdown-trigger--current";
-            targetDropdown.className += " dropdown--is-open";
+            targetDropdownTrigger.className += (' ' + settings.activeTriggerClassName);
+            targetDropdown.className += (' ' + settings.activeDropdownClassName);
 
         };
 
         this.hideDropdowns = function(){
 
-            for (var i = 0, max = domElements.dropdown.length; i < max; i++) {
-                domElements.dropdown[i].className = domElements.dropdown[i].className.replace( /(?:^|\s)dropdown--is-open(?!\S)/g , '' );
+            if(settings.activeDropdown) {
+            	settings.activeDropdown.classList.remove(settings.activeDropdownClassName);
+            	settings.activeDropdownTrigger.classList.remove(settings.activeTriggerClassName);
+            }
 
-                domElements.dropdownTrigger[i].className = domElements.dropdownTrigger[i].className.replace( /(?:^|\s)dropdown-trigger--current(?!\S)/g , '' );
-            };
         };
     };
 
