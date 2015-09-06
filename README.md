@@ -6,8 +6,15 @@ It aims to be an unobtrusive, object orientated collection of UI elements that c
 
 We care about accessibility and making the web available to all.
 
+## Developers
+
 This is currently a work in progress and is being developed by:
 
 David Berner
 Bard Hovde
 Gary Wood
+
+## Components
+
+* Dropdown
+* [Tabs](https://github.com/websuperheroes/vanilla-ui/tree/master/tabs)
