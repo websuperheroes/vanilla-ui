@@ -1,3 +1,31 @@
+/*
+==========================================================================
+	Required Styles
+==========================================================================
+*/
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel--current {
+    display: block;
+}
+
+/* No JS styles */
+
+.no-js .tab-panel {
+	display: block;
+}
+
+
+/*
+==========================================================================
+	Basic custom styles
+==========================================================================
+*/
+
+
 body {
     padding: 20px;
 }
@@ -28,15 +56,10 @@ body {
 }
 
 .tab-panel {
-    display: none;
     padding: 10px;
 }
 
 /* Current - Active State */
-
-.tab-panel--current {
-    display: block;
-}
 
 .tab-list__item--current {
     border-bottom: 1px solid #FFF;
@@ -47,11 +70,10 @@ body {
 
 /* No JS styles */
 
-.no-js .tab-panel {
-	display: block;
-}
 .no-js .tab-list__item {
 	border: none;
 	background: none;
 	color: blue;
 }
+
+

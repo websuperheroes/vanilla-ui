@@ -16,9 +16,11 @@
                     activeTabNavClassName: pActiveTabNavClassName || 'tab-list__item--current',
                     activeTabPaneClassName: pActiveTabPaneClassName || 'tab-panel--current',
                 };
-        var ENTER_KEY 		= 13;
+
         var LEFT_ARROW_KEY  = 37;
+        var UP_ARROW_KEY    = 38;
         var RIGHT_ARROW_KEY = 39;
+        var DOWN_ARROW_KEY  = 40;
        
         this.init = function(){
             this.bindEvents();
@@ -43,10 +45,7 @@
                 
 	            if (target.parentNode.classList.contains(settings.tabsHook)){ 
 	            	
-	            	if(event.keyCode == ENTER_KEY || event.which == ENTER_KEY) {
-
-	            	}
-	            	else if(event.keyCode == LEFT_ARROW_KEY || event.which == LEFT_ARROW_KEY) {
+	            	if(event.keyCode === LEFT_ARROW_KEY || event.which === LEFT_ARROW_KEY || event.keyCode === UP_ARROW_KEY || event.which === UP_ARROW_KEY) {
 
 	            		var xTarget = target.previousElementSibling;
 	            		
@@ -56,7 +55,7 @@
 	            		target = xTarget;
 	            	}
 	            	
-	            	else if(event.keyCode == RIGHT_ARROW_KEY || event.which == RIGHT_ARROW_KEY) {
+	            	else if(event.keyCode === RIGHT_ARROW_KEY || event.which === RIGHT_ARROW_KEY || event.keyCode === DOWN_ARROW_KEY || event.which === DOWN_ARROW_KEY) {
 
 	            		var yTarget = target.nextElementSibling;
 	            		if(!yTarget) {
@@ -89,7 +88,7 @@
         this.showTab = function(){
         	settings.activeTabNav.className  += (' ' + settings.activeTabNavClassName);
             settings.activeTabPane.className += (' ' + settings.activeTabPaneClassName);
-
+            settings.activeTabNav.setAttribute('tabindex', '0');
             settings.activeTabNav.setAttribute('aria-selected', 'true');
 			settings.activeTabPane.setAttribute('aria-hidden', 'false');
 			
@@ -104,7 +103,7 @@
 
 			settings.activeTabNav.setAttribute('aria-selected', 'false');
 			settings.activeTabPane.setAttribute('aria-hidden', 'true');
-            
+            settings.activeTabNav.setAttribute('tabindex', '-1');
             settings.activeTabNav.classList.remove(settings.activeTabNavClassName);
             settings.activeTabPane.classList.remove(settings.activeTabPaneClassName);
 
