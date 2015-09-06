@@ -4,31 +4,56 @@
     <title>Vanilla UI - Tabs</title>
 
     <!-- Eric Meyer reset - not needed for tabs to work -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
 
     <!-- Minimal styles for tabs - required -->
     <link rel="stylesheet" href="css/vanilla-ui.tabs.css">
 </head>
-<body>
+<body class="no-js">
 
-    <nav class="js-tab-nav tab-nav" role="tablist">
-        <a id="tab-nav-1" class="tab-nav__item" href="#tab-pane-1" role="tab" aria-controls="tab-pane-1" aria-selected="true" tabindex="0">Tab 1</a>
-        <a id="tab-nav-2" class="tab-nav__item" href="#tab-pane-2" role="tab" aria-controls="tab-pane-2" aria-selected="false" tabindex="0">Tab 2</a>
-        <a id="tab-nav-3" class="tab-nav__item" href="#tab-pane-3" role="tab" aria-controls="tab-pane-3" aria-selected="false" tabindex="0">Tab 3</a>
+    <nav class="js-tab-list tab-list" role="tablist">
+        <a id="tab-list-1" class="tab-list__item" href="#tab-panel-1" role="tab" aria-controls="tab-panel-1" aria-selected="true" tabindex="0">Tab 1</a>
+        
+        <a id="tab-list-2" class="tab-list__item" href="#tab-panel-2" role="tab" aria-controls="tab-panel-2" aria-selected="false" tabindex="0">Tab 2</a>
+        
+        <a id="tab-list-3" class="tab-list__item" href="#tab-panel-3" role="tab" aria-controls="tab-panel-3" aria-selected="false" tabindex="0">Tab 3</a>
     </nav>
 
-    <section class="js-tab-panes tab-panes">
-        <div id="tab-pane-1" class="tab-pane" role="tabpanel" aria-hidden="false">
+    <section class="tab-panels">
+        <div id="tab-panel-1" class="tab-panel" role="tabpanel" aria-hidden="false">
+        	
+        	<a name="tab-panel-1"></a>
+        	
         	<h3 tabindex="0">Tab 1</h3>
-            <p>Oh my gosh, look at me, I'm Tab 1</p>
+            
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+			<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+
         </div>
-        <div id="tab-pane-2" class="tab-pane" role="tabpanel"  aria-hidden="true">
+        <div id="tab-panel-2" class="tab-panel" role="tabpanel"  aria-hidden="true">
+
+        	<a name="tab-panel-2"></a>
+
         	<h3 tabindex="0">Tab 2</h3>
-            <p>Everyone knows the realness is going down in Tab 2</p>
+
+            <p>Nunc eget ante non erat volutpat accumsan et sit amet ipsum. Praesent tempus nibh ut augue fermentum, sit amet egestas ipsum imperdiet. Morbi fringilla sit amet justo et gravida. Sed facilisis lobortis lorem in molestie. Nullam volutpat ipsum ut elit porta, nec fermentum est mattis. Nulla molestie in mauris eu viverra. Morbi faucibus, neque ac pharetra eleifend, lorem metus tincidunt risus, vel facilisis velit turpis sed tellus. Vestibulum sed suscipit est. Cras fermentum, mauris vitae tempus vehicula, urna purus semper dolor, ut pretium sapien mauris vel mauris. Ut id eleifend enim, tincidunt congue felis.</p>
+
+			<p>Phasellus tincidunt ornare orci, sit amet cursus turpis mattis in. Ut congue, risus eu condimentum gravida, libero nulla iaculis mi, sed maximus nibh urna vel justo. Praesent sed dignissim lectus, vitae faucibus arcu. Aliquam vel mi mollis, feugiat neque placerat, mollis dui. Praesent at diam luctus, viverra nisi a, euismod ipsum. Aenean ac sem condimentum, sagittis arcu a, congue leo. Vestibulum ut rhoncus nibh. Phasellus orci magna, fringilla eu lorem id, gravida varius libero. Nullam scelerisque urna tempor, porttitor erat non, interdum erat. Etiam eu varius orci. Sed id varius ipsum. Mauris vestibulum tempor neque, sed feugiat justo euismod in.</p>
+
+			<p>Suspendisse quis ex commodo, ultrices erat et, ullamcorper est. Mauris sollicitudin ultricies ligula nec ultrices. Sed velit sem, lobortis id nibh vitae, tincidunt commodo sapien. Mauris finibus diam at ligula lacinia tincidunt. Cras massa orci, varius ut porttitor blandit, blandit pharetra odio. Pellentesque fermentum pharetra porta. Quisque fermentum dolor nec libero finibus, pellentesque ultrices sem accumsan. Morbi ligula dui, suscipit quis libero sit amet, accumsan elementum nisl. Nullam at fringilla quam, eget ultrices nunc.</p>
+
         </div>
-        <div id="tab-pane-3" class="tab-pane" role="tabpanel" aria-hidden="true">
+        <div id="tab-panel-3" class="tab-panel" role="tabpanel" aria-hidden="true">
+        	
+        	<a name="tab-panel-3"></a>
+        	
         	<h3 tabindex="0">Tab 3</h3>
-            <p>How about some love for tab 3 y'all</p>
+            
+            <p>Donec porta elementum posuere. Aliquam sed dapibus turpis. Vestibulum maximus nunc porttitor lobortis vulputate. Praesent viverra velit eu mollis gravida. Mauris eros dui, euismod vitae felis ut, commodo commodo nulla. Ut ultricies commodo nulla. Proin viverra, massa in mattis eleifend, nulla lectus porttitor arcu, ut rutrum augue massa et lacus.</p>
+
+			<p>Quisque est turpis, bibendum vitae elementum eget, accumsan vitae nisl. Fusce et varius nisi, ut aliquet eros. Morbi commodo eget libero id consectetur. Mauris vitae eros finibus, interdum felis ac, consectetur risus. Curabitur nec nunc aliquet, ultrices turpis in, scelerisque sem. Quisque venenatis nec ipsum a cursus. Etiam nec urna dapibus, maximus risus sed, elementum leo. Aliquam dui nisi, ultrices vitae congue vel, porta convallis leo. Aenean sed ultrices orci, sit amet convallis odio. Aliquam at felis ac diam fringilla rhoncus et ultrices mi. In at ipsum imperdiet, hendrerit purus eget, laoreet massa. Nunc odio ligula, finibus vitae varius ac, euismod sed justo. Morbi enim dui, viverra sit amet maximus eget, pulvinar nec felis. Duis placerat ligula non est auctor iaculis. Donec rhoncus ultricies mi, non pellentesque eros egestas et.</p>
+
         </div>
     </section>
 

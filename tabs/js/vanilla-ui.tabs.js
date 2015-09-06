@@ -12,9 +12,9 @@
         var settings = {
                     activeTabNav  : document.getElementById(pActiveTabNav),
                     activeTabPane : document.getElementById(pActiveTabPane),
-                    tabsHook: pTabsHook || 'js-tab-nav', 
-                    activeTabNavClassName: pActiveTabNavClassName || 'tab-nav__item--current',
-                    activeTabPaneClassName: pActiveTabPaneClassName || 'tab-pane--current',
+                    tabsHook: pTabsHook || 'js-tab-list', 
+                    activeTabNavClassName: pActiveTabNavClassName || 'tab-list__item--current',
+                    activeTabPaneClassName: pActiveTabPaneClassName || 'tab-panel--current',
                 };
         var ENTER_KEY 		= 13;
         var LEFT_ARROW_KEY  = 37;
@@ -67,7 +67,7 @@
 	            	else {
 	            		return;
 	            	}
-	            	
+
 	            	self.prepareTab(target);
 	            } // end if
             };
@@ -111,7 +111,10 @@
         };
     };
 
-    var tabs = new wshVanillaTabs('tab-nav-1', 'tab-pane-1');
+    var tabs = new wshVanillaTabs('tab-list-1', 'tab-panel-1');
     tabs.init();
 
 })();
+
+
+document.getElementsByTagName('body')[0].classList.remove('no-js');

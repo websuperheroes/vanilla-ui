@@ -4,7 +4,7 @@ body {
 
 /* Tab Button - Link */
 
-.tab-nav__item {
+.tab-list__item {
     display: inline-block;
     border: 1px solid #CCC;
     border-bottom: none;
@@ -12,7 +12,7 @@ body {
     border-radius: 5px 5px 0 0;
     position: relative;
     z-index: 2;
-    background: #F1F1F1;
+    background-color: #F1F1F1;
     text-decoration: none;
     color: #333;
 }
@@ -20,26 +20,38 @@ body {
 
 /* Tab Content Area */
 
-.tab-panes {
+.tab-panels {
     border-top: 1px solid #CCC;
     position: relative;
     top: -1px;
     z-index: 1;
 }
 
-.tab-pane {
+.tab-panel {
     display: none;
     padding: 10px;
 }
 
 /* Current - Active State */
 
-.tab-pane--current {
+.tab-panel--current {
     display: block;
 }
-.tab-nav__item--current {
+
+.tab-list__item--current {
     border-bottom: 1px solid #FFF;
     font-weight: bold;
     background: #FFF;
     cursor: default;
+}
+
+/* No JS styles */
+
+.no-js .tab-panel {
+	display: block;
+}
+.no-js .tab-list__item {
+	border: none;
+	background: none;
+	color: blue;
 }
