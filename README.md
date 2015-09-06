@@ -16,5 +16,5 @@ Gary Wood
 
 ## Components
 
-* Dropdown
+* [Dropdown](https://github.com/websuperheroes/vanilla-ui/tree/master/dropdown)
 * [Tabs](https://github.com/websuperheroes/vanilla-ui/tree/master/tabs)
