@@ -1,10 +1,12 @@
+'use strict';
+
 (function(){
 
     /**
     * wshVanillaDropdowns Module
     */
 
-    var wshVanillaDropdown = function(pTriggerHook, pDropdownHook, pActiveTriggerClassName, pActiveDropdownClassName){
+    var WshVanillaDropdown = function(pTriggerHook, pDropdownHook, pActiveTriggerClassName, pActiveDropdownClassName){
 
         var self = this;
         var settings = {
@@ -139,7 +141,7 @@
         };
     };
 
-    var dropdown = new wshVanillaDropdown();
+    var dropdown = new WshVanillaDropdown();
         dropdown.init();
 
 })();
