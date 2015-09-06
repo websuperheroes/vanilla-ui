@@ -11,21 +11,23 @@
 </head>
 <body>
 
-    <nav class="tab-nav">
-        <a ui-tab-nav="1" class="tab-nav__item tab-nav__item--current" href="#">Tab 1</a>
-        <a ui-tab-nav="2" class="tab-nav__item" href="#">Tab 2</a>
-        <a ui-tab-nav="3" class="tab-nav__item" href="#">Tab 3</a>
+    <nav class="js-tab-nav tab-nav" role="tablist">
+        <a id="tab-nav-1" class="tab-nav__item" href="#tab-pane-1" role="tab" aria-controls="tab-pane-1" aria-selected="true" tabindex="0">Tab 1</a>
+        <a id="tab-nav-2" class="tab-nav__item" href="#tab-pane-2" role="tab" aria-controls="tab-pane-2" aria-selected="false" tabindex="0">Tab 2</a>
+        <a id="tab-nav-3" class="tab-nav__item" href="#tab-pane-3" role="tab" aria-controls="tab-pane-3" aria-selected="false" tabindex="0">Tab 3</a>
     </nav>
 
-
-    <section class="tabs">
-        <div ui-tab="1" class="tab tab--current">
+    <section class="js-tab-panes tab-panes">
+        <div id="tab-pane-1" class="tab-pane" role="tabpanel" aria-hidden="false">
+        	<h3 tabindex="0">Tab 1</h3>
             <p>Oh my gosh, look at me, I'm Tab 1</p>
         </div>
-        <div ui-tab="2" class="tab">
+        <div id="tab-pane-2" class="tab-pane" role="tabpanel"  aria-hidden="true">
+        	<h3 tabindex="0">Tab 2</h3>
             <p>Everyone knows the realness is going down in Tab 2</p>
         </div>
-        <div ui-tab="3" class="tab">
+        <div id="tab-pane-3" class="tab-pane" role="tabpanel" aria-hidden="true">
+        	<h3 tabindex="0">Tab 3</h3>
             <p>How about some love for tab 3 y'all</p>
         </div>
     </section>

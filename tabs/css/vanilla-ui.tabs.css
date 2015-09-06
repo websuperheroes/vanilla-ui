@@ -20,21 +20,21 @@ body {
 
 /* Tab Content Area */
 
-.tabs {
+.tab-panes {
     border-top: 1px solid #CCC;
     position: relative;
     top: -1px;
     z-index: 1;
 }
 
-.tab {
+.tab-pane {
     display: none;
     padding: 10px;
 }
 
 /* Current - Active State */
 
-.tab--current {
+.tab-pane--current {
     display: block;
 }
 .tab-nav__item--current {
