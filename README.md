@@ -10,9 +10,9 @@ We care about accessibility and making the web available to all.
 
 This is currently a work in progress and is being developed by:
 
-David Berner
-Bard Hovde
-Gary Wood
+* David Berner
+* Bard Hovde
+* Gary Wood
 
 ## Components
 
